@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.CCI.LPDAOO.java.paint_Back.model.shapes.SPixel;
-import fr.CCI.LPDAOO.java.paint_Back.model.shapes.minimized.Pouik;
+import fr.CCI.LPDAOO.java.paint_Back.model.shapes.petitmodel.Human;
 
 @RestController
 public class PixelController {
 
 	
 	@GetMapping(value = "/pouik")
-	public Pouik nimporteQuoiCommeNom() {
-		Pouik p = new Pouik();
+	public Human nimporteQuoiCommeNom() {
+		Human p = new Human();
 		p.setAge(20);
 		p.setName("fred");
 		System.out.println(p);
@@ -25,7 +25,7 @@ public class PixelController {
 
 	
 	@PostMapping(value = "/pouik")
-	public ResponseEntity<Pouik> postPouik(@RequestBody Pouik p) {
+	public ResponseEntity<Human> postPouik(@RequestBody Human p) {
 		if(p.getAge() > 20) {
 			 return ResponseEntity.badRequest().build();
 		}
@@ -36,6 +36,7 @@ public class PixelController {
 			
 			return ResponseEntity.ok().body(p);
 		}
-
 	}
+	
+	
 }

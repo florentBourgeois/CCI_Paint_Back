@@ -1,13 +1,36 @@
-package fr.CCI.LPDAOO.java.paint_Back.model.shapes.minimized;
+package fr.CCI.LPDAOO.java.paint_Back.model.shapes.petitmodel;
 
 import java.beans.Transient;
 
-public class Pouik {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity
+public class Human {
 	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long ID;
 	private String name;
 	private int age;
 	
-	public Pouik() {
+	
+	public Long getID() {
+		return ID;
+	}
+
+	public void setID(Long iD) {
+		ID = iD;
+	}
+
+
+
+	
+	
+	public Human() {
 		// TODO Auto-generated constructor stub
 	}
 
